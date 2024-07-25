@@ -5,6 +5,6 @@
 vim.api.nvim_create_autocmd("BufEnter", {
   group = vim.api.nvim_create_augroup("No formatoptions overrides, please", { clear = true }),
   callback = function()
-    vim.opt.formatoptions = "tcrqanblj"
+    vim.opt.formatoptions = "tcrqnblj"
   end,
 })
