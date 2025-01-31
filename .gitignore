@@ -2,3 +2,4 @@ data
 state
 config/swiftpm
 config/helix/runtime/grammars
+config/tmux/plugins
