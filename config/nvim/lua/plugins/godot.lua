@@ -1,3 +1,7 @@
+if vim.fn.filereadable("./project.godot") == 1 then
+  vim.fn.serverstart("localhost:6006")
+end
+
 return {
   {
     "neovim/nvim-lspconfig",
