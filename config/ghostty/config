@@ -1,4 +1,14 @@
 theme = tokyonight
 font-family = HackNerdFont
-keybind = global:cmd+shift+space=toggle_quick_terminal
 quick-terminal-position = bottom
+
+keybind = global:cmd+shift+space=toggle_quick_terminal
+keybind = global:cmd+ctrl+h=goto_split:left
+keybind = global:cmd+ctrl+j=goto_split:bottom
+keybind = global:cmd+ctrl+k=goto_split:top
+keybind = global:cmd+ctrl+l=goto_split:right
+keybind = global:cmd+ctrl+\=new_split:auto
+keybind = global:cmd+ctrl+H=new_split:left
+keybind = global:cmd+ctrl+J=new_split:down
+keybind = global:cmd+ctrl+K=new_split:up
+keybind = global:cmd+ctrl+L=new_split:right
