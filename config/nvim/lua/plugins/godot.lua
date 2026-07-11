@@ -25,4 +25,5 @@ return {
       },
     },
   },
+  "mphe/vim-gdscript4",
 }
