@@ -1,0 +1,12 @@
+{
+  "trustedformulae": [
+    "anomalyco/tap/opencode",
+    "xcodesorg/made/xcodes"
+  ],
+  "trustedtaps": [
+    "xcodesorg/made"
+  ],
+  "trustedcasks": [
+    "nikitabobko/tap/aerospace"
+  ]
+}
