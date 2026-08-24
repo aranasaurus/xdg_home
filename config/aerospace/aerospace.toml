@@ -76,6 +76,23 @@ gaps.outer.top = 0
 gaps.outer.right = 0
 
 
+# App-specific automations
+on-window-detected = [
+  {
+    if = 'test %{app-bundle-id} = com.microsoft.Outlook',
+    run = 'move-node-to-workspace o',
+  },
+  {
+    if = 'test %{app-bundle-id} = com.dexcom.vnv.DrStrange',
+    run = 'layout floating'
+  },
+  {
+    if = 'test %{window-title} = "Merge Conflicts"',
+    run = 'fullscreen'
+  }
+]
+
+
 # Main mode bindings
 # 'main' binding mode declaration
 # See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes
