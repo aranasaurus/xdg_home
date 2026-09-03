@@ -78,18 +78,37 @@ gaps.outer.right = 0
 
 # App-specific automations
 on-window-detected = [
+  # SourceGit
+  {
+    if = 'test %{window-title} = "Merge Conflicts"',
+    run = 'layout floating'
+  },
+
+  {
+    if = 'test %{app-bundle-id} = com.1password.1password',
+    run = 'layout floating'
+  },
+  {
+    if = 'test %{app-bundle-id} = com.apple.finder',
+    run = 'layout floating'
+  },
   {
     if = 'test %{app-bundle-id} = com.microsoft.Outlook',
     run = 'move-node-to-workspace o',
   },
   {
+    if = 'test %{app-bundle-id} = com.microsoft.teams2',
+    run = 'layout floating',
+  },
+  {
+    if = 'test %{app-bundle-id} = com.apple.dt.xcode',
+    run = 'move-node-to-workspace x'
+  },
+
+  {
     if = 'test %{app-bundle-id} = com.dexcom.vnv.DrStrange',
     run = 'layout floating'
   },
-  {
-    if = 'test %{window-title} = "Merge Conflicts"',
-    run = 'fullscreen'
-  }
 ]
 
 
@@ -149,6 +168,7 @@ alt-tab = 'workspace-back-and-forth'
 # See: https://nikitabobko.github.io/AeroSpace/commands#move-workspace-to-monitor
 alt-shift-tab = 'move-workspace-to-monitor --wrap-around next'
 alt-shift-f = 'fullscreen'
+alt-shift-x = 'layout floating tiling'
 
 # move current window to workspace 1 and switch to workspace 1
 ctrl-alt-cmd-backspace = ['move-node-to-workspace 1', 'workspace 1']
