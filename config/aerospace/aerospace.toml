@@ -111,6 +111,40 @@ on-window-detected = [
   },
 ]
 
+# Kill the Teams Chat window
+on-focus-changed = '''exec-and-forget
+for _ in {1..10}; do
+    windows="$(
+        aerospace list-windows --all \
+            --format '%{window-id}%{tab}%{app-bundle-id}%{tab}%{window-title}'
+    )"
+
+    teams_count="$(
+        printf '%s\n' "$windows" |
+        awk -F '\t' '$2 == "com.microsoft.teams2" { count++ }
+                       END { print count + 0 }'
+    )"
+
+    chat_id="$(
+        printf '%s\n' "$windows" |
+        awk -F '\t' '
+            $2 == "com.microsoft.teams2" &&
+            tolower($3) ~ /activity/ {
+                print $1
+                exit
+            }'
+    )"
+    if [[ -n "$chat_id" ]]; then
+      if [[ "$teams_count" -gt 1 ]]; then
+        aerospace close --window-id "$chat_id"
+        break
+      fi
+    fi
+
+    sleep 0.1
+done
+'''
+
 
 # Main mode bindings
 # 'main' binding mode declaration
