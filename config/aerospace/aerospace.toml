@@ -129,7 +129,7 @@ for _ in {1..10}; do
         printf '%s\n' "$windows" |
         awk -F '\t' '
             $2 == "com.microsoft.teams2" &&
-            tolower($3) ~ /activity/ {
+            tolower($3) ~ /^(activity|chat|calendar)([[:space:]]*\||$)/ {
                 print $1
                 exit
             }'
