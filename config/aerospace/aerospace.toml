@@ -109,6 +109,14 @@ on-window-detected = [
     run = 'move-node-to-workspace x'
   },
 
+  # I keep the Aerospace config open pretty much all the time right now as I'm constantly addig stuff to it
+  # and tweaking it. So, for now, when I'm editing the config, just let that window float. Once that settles
+  # down I'll probably remove this entry.
+  {
+    if = 'test %{window-title} = "vim aerospace.toml"',
+    run = 'layout floating'
+  },
+
   {
     if = 'test %{app-bundle-id} = com.dexcom.vnv.DrStrange',
     run = 'layout floating'
